@@ -1,11 +1,6 @@
 from main import db, app #, Pokemon
 import csv
 
-with open('pokemon.csv', 'r') as infile:
-    reader = csv.reader(infile, delimiter = ",")
-    values = next(reader)
-    print(values)
-
 db.create_all(app=app)
 
 
