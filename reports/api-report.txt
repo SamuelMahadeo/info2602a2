@@ -1,0 +1,111 @@
+
+> info2602a2@1.0.0 newman
+> newman run tests/a2collection.json -e environment.json; return 0;
+
+newman
+
+Assignment 2
+
+→ List Pokemon
+  GET https://8080-uwidcit-info2602a2-bu0pdl91n0m.ws-us34.gitpod.io//pokemon [401 Unauthorized, 85B, 118ms]
+  1. Pokemon data should have the attributes pid, attack, defence, sp_attack, sp_defence, speed, hp, height, weight, type1 and type2 with an appropriate value or null
+
+→ Sign Up
+  POST https://8080-uwidcit-info2602a2-bu0pdl91n0m.ws-us34.gitpod.io//signup [401 Unauthorized, 85B, 7ms]
+  2. Should respond with 'user created' for new user or 'username or email already exists' for pre-existing user
+
+→ Login
+  POST https://8080-uwidcit-info2602a2-bu0pdl91n0m.ws-us34.gitpod.io//auth [401 Unauthorized, 85B, 6ms]
+  3. Returned Access Token
+
+→ Save My Pokemon
+  GET https://8080-uwidcit-info2602a2-bu0pdl91n0m.ws-us34.gitpod.io//mypokemon [401 Unauthorized, 85B, 5ms]
+  POST https://8080-uwidcit-info2602a2-bu0pdl91n0m.ws-us34.gitpod.io//mypokemon [401 Unauthorized, 85B, 6ms]
+  ✓  Should create a pokemon and add it to the user's listing
+  GET https://8080-uwidcit-info2602a2-bu0pdl91n0m.ws-us34.gitpod.io//mypokemon [401 Unauthorized, 85B, 5ms]
+
+→ List My Pokemon
+  GET https://8080-uwidcit-info2602a2-bu0pdl91n0m.ws-us34.gitpod.io//mypokemon [401 Unauthorized, 85B, 6ms]
+  4. Pokemon data should have the attributes name and status with the appropriate values
+
+→ Get My Pokemon
+  GET https://8080-uwidcit-info2602a2-bu0pdl91n0m.ws-us34.gitpod.io//mypokemon/1 [401 Unauthorized, 85B, 6ms]
+  5. Pokemon data should have the attributes name and status with the appropriate values
+
+→ Update My Pokemon
+  PUT https://8080-uwidcit-info2602a2-bu0pdl91n0m.ws-us34.gitpod.io//mypokemon/1 [401 Unauthorized, 85B, 6ms]
+  6. Body is correct
+  ✓  Should update the corresponding pokemon
+  GET https://8080-uwidcit-info2602a2-bu0pdl91n0m.ws-us34.gitpod.io//mypokemon/1 [401 Unauthorized, 85B, 5ms]
+
+→ Delete My Pokemon
+  GET https://8080-uwidcit-info2602a2-bu0pdl91n0m.ws-us34.gitpod.io//mypokemon [401 Unauthorized, 85B, 5ms]
+  DELETE https://8080-uwidcit-info2602a2-bu0pdl91n0m.ws-us34.gitpod.io//mypokemon/2 [401 Unauthorized, 85B, 5ms]
+  ✓  Should delete pokemon from the user's collection
+  7. Should have the appropriate status code
+  GET https://8080-uwidcit-info2602a2-bu0pdl91n0m.ws-us34.gitpod.io//mypokemon [401 Unauthorized, 85B, 5ms]
+
+┌─────────────────────────┬───────────────────┬──────────────────┐
+│                         │          executed │           failed │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              iterations │                 1 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│                requests │                13 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│            test-scripts │                 8 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│      prerequest-scripts │                 3 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              assertions │                10 │                7 │
+├─────────────────────────┴───────────────────┴──────────────────┤
+│ total run duration: 388ms                                      │
+├────────────────────────────────────────────────────────────────┤
+│ total data received: 0B (approx)                               │
+├────────────────────────────────────────────────────────────────┤
+│ average response time: 14ms [min: 5ms, max: 118ms, s.d.: 29ms] │
+└────────────────────────────────────────────────────────────────┘
+
+  #  failure         detail                                                                                                                                                            
+                                                                                                                                                                                       
+ 1.  JSONError       Pokemon data should have the attributes pid, attack, defence, sp_attack, sp_defence, speed, hp, height, weight, type1 and type2 with an appropriate value or null 
+                     No data, empty input at 1:1                                                                                                                                       
+                                                                                                                                                                                       
+                     ^                                                                                                                                                                 
+                     at assertion:0 in test-script                                                                                                                                     
+                     inside "List Pokemon"                                                                                                                                             
+                                                                                                                                                                                       
+ 2.  AssertionError  Should respond with 'user created' for new user or 'username or email already exists' for pre-existing user                                                       
+                     expected '' to be one of [ Array(2) ]                                                                                                                             
+                     at assertion:0 in test-script                                                                                                                                     
+                     inside "Sign Up"                                                                                                                                                  
+                                                                                                                                                                                       
+ 3.  JSONError       Returned Access Token                                                                                                                                             
+                     No data, empty input at 1:1                                                                                                                                       
+                                                                                                                                                                                       
+                     ^                                                                                                                                                                 
+                     at assertion:0 in test-script                                                                                                                                     
+                     inside "Login"                                                                                                                                                    
+                                                                                                                                                                                       
+ 4.  JSONError       Pokemon data should have the attributes name and status with the appropriate values                                                                               
+                     No data, empty input at 1:1                                                                                                                                       
+                                                                                                                                                                                       
+                     ^                                                                                                                                                                 
+                     at assertion:0 in test-script                                                                                                                                     
+                     inside "List My Pokemon"                                                                                                                                          
+                                                                                                                                                                                       
+ 5.  JSONError       Pokemon data should have the attributes name and status with the appropriate values                                                                               
+                     No data, empty input at 1:1                                                                                                                                       
+                                                                                                                                                                                       
+                     ^                                                                                                                                                                 
+                     at assertion:0 in test-script                                                                                                                                     
+                     inside "Get My Pokemon"                                                                                                                                           
+                                                                                                                                                                                       
+ 6.  AssertionError  Body is correct                                                                                                                                                   
+                     expected response body to equal 'Updated' but got ''                                                                                                              
+                     at assertion:0 in test-script                                                                                                                                     
+                     inside "Update My Pokemon"                                                                                                                                        
+                                                                                                                                                                                       
+ 7.  AssertionError  Should have the appropriate status code                                                                                                                           
+                     expected 401 to deeply equal 204                                                                                                                                  
+                     at assertion:1 in test-script                                                                                                                                     
+                     inside "Delete My Pokemon"                                                                                                                                        

@@ -4,7 +4,7 @@
 	"values": [
 		{
 			"key": "host",
-			"value": "http://localhost:8080",
+			"value": "https://8080-uwidcit-info2602a2-bu0pdl91n0m.ws-us34.gitpod.io/",
 			"enabled": true
 		}
 	],
